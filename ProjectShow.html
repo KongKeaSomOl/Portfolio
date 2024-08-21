@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Showcases</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/128/5956/5956592.png"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* General styling */
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #081b29;
+        margin: 0;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        color: #68acf5;
+      }
+
+      /* Navbar styling */
+      .navbar {
+        background: linear-gradient(90deg, #007bff, #00d2ff);
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030; /* Ensure the navbar is above other content */
+      }
+
+      .navbar-brand {
+        color: #fff !important;
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .navbar-brand:hover {
+        color: #d0e6f5 !important;
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff !important;
+        font-size: 18px;
+        margin-right: 15px;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #d0e6f5 !important;
+        text-decoration: underline;
+      }
+
+      .navbar-toggler {
+        border-color: #fff !important;
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,.5)' stroke-width='2' d='M5 6h20M5 14h20M5 22h20'/%3E%3C/svg%3E");
+      }
+
+      /* Adjust the top padding for the body or main content to account for the fixed navbar */
+      .content {
+        padding-top: 70px; /* Adjust based on the height of your navbar */
+      }
+
+      /* Section styling */
+      section {
+        padding: 80px 20px;
+      }
+
+      section h2 {
+        text-align: center;
+        font-size: 30px;
+        color: #f4f4f4;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      section h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #007bff;
+        margin: 10px auto 0;
+        border-radius: 2px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul li {
+        margin: 10px 0;
+      }
+
+      ul li a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      ul li a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+
+      /* Button styling */
+      .btn {
+        display: inline-block;
+        background: #007bff;
+        color: #fff;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #0056b3;
+      }
+
+      /* Project card styling */
+      .project {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 15px 0;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .project:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Footer styling */
+      footer {
+        background: none;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        section {
+          padding: 100px 20px; /* Additional padding for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">My Projects</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#frontend">Front-End Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#backend">Back-End Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#assignments">Assignments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#uxui">UX/UI Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="content">
+      <section id="about">
+        <div class="container">
+          <h2>About This Portfolio</h2>
+          <p>
+            This portfolio showcases projects and assignments from school,
+            online courses, and YouTube tutorials. It covers
+            various aspects including Front-End, Back-End, and UX/UI design.
+          </p>
+        </div>
+      </section>
+
+      <section id="frontend">
+        <div class="container">
+          <h2>Front-End Projects</h2>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/AttendanceTracker.git"
+                target="_blank"
+                >Attendance Tracker</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Basic-LandingScape.git"
+                target="_blank"
+                >Basic LandingScape</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Basic-Portfolio.git"
+                target="_blank"
+                >Basic Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Basic-Shopping-Cart.git"
+                target="_blank"
+                >Basic Shopping Cart</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Form-Web-Hotel.git"
+                target="_blank"
+                >Hotel</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Html-Css-Js-Caculator.git"
+                target="_blank"
+                >Html Css Js Caculator</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Portfolio-No-Responsive.git"
+                target="_blank"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Project-Sell-Products.git"
+                target="_blank"
+                >Project Sell Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Tic-Tac-Toc.git"
+                target="_blank"
+                >Tic Tac Toc</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="backend">
+        <div class="container">
+          <h2>Back-End Projects</h2>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/CrudProjectPHP.git"
+                target="_blank"
+                >Crud Project PHP</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/InsertStudent.git"
+                target="_blank"
+                >Insert Student</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/login-logoutDB.git"
+                target="_blank"
+                >Log In And Log Out</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/StudentManagementList.git"
+                target="_blank"
+                >Student Management List</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="assignments">
+        <div class="container">
+          <h2>Assignments</h2>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Store-Products.git"
+                target="_blank"
+                >Store Product (C# (.net))</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/KongKeaSomOl/Ebay-Project-Assignment-Group.git"
+                target="_blank"
+                >Ebay Projects</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="uxui">
+        <div class="container">
+          <h2>UX/UI Design</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.figma.com/proto/qhHAdCaLpMTYGi4dkVr6TU/Restaurant-App?node-id=2-2&starting-point-node-id=2%3A2&t=dPhff9CeksCX5z7h-1"
+                target="_blank"
+                >Restaurant-App</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/proto/b1U2FolPmlNA60WgjybNl1/Ebay-Project?node-id=2-3&starting-point-node-id=2%3A3&scaling=scale-down-width&content-scaling=fixed&t=rKFr23j5c4yLuBk7-1"
+                target="_blank"
+                >Ebay Shopping</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <h2>Contact Me</h2>
+          <p>
+            If you'd like to get in touch or have any questions, feel free to
+            reach out!
+          </p>
+          <a href="contact.html" class="btn">Contact Me</a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy;2024 by Kongkea. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

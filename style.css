@@ -1,0 +1,351 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #081b29; /* Updated background color */
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+.header {
+  background-color: rgba(8, 27, 41, 0.7); /* Updated header background color */
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.logo {
+  position: relative;
+  font-size: 25px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;
+  overflow: hidden; /* Ensure the animation stays within bounds */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.logo span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.5s steps(30, end), blinkCursor 0.75s step-end infinite;
+  color: #ededed; /* Text color */
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; /* Ensure it starts from the left */
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 0.4s;
+  z-index: -1; /* Ensure the pseudo-element is behind the text */
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blink animation */
+@keyframes blinkCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Slide-in effect for the background */
+@keyframes showRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  color: #f5f5f5;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #00abf0;
+  transform: translateY(-3px);
+}
+
+.home {
+  height: 100vh;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-content {
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.home-content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #00abf0;
+  transition: transform 0.3s;
+}
+
+.home-content img:hover {
+  transform: scale(1.1);
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.home-content h3 {
+  font-size: 1.75rem;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.btn-box .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-box .btn-primary {
+  background-color: #00abf0;
+  color: #081b29; /* Updated button primary color */
+  border: none;
+}
+
+.btn-box .btn-primary:hover {
+  background-color: #081b29; /* Updated button primary hover color */
+  color: #00abf0;
+}
+
+.btn-box .btn-outline-light {
+  color: #f5f5f5;
+  border: 2px solid #f5f5f5;
+}
+
+.btn-box .btn-outline-light:hover {
+  color: #00abf0;
+  border-color: #00abf0;
+}
+
+.home-sci {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.home-sci a {
+  font-size: 1.5rem;
+  color: #00abf0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.home-sci a:hover {
+  color: #ededed;
+  transform: scale(1.2);
+}
+
+.home-imgHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 27, 41, 0.5); /* Updated overlay color */
+  transition: opacity 0.5s;
+}
+
+.home-imgHover:hover {
+  background: rgba(8, 27, 41, 0.8); /* Updated hover overlay color */
+  opacity: 0.8;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-content p {
+    font-size: 0.875rem;
+  }
+
+  .btn-box .btn {
+    font-size: 0.875rem;
+  }
+
+  .home-sci a {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .home-content img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .home-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .home-content p {
+    font-size: 0.75rem;
+  }
+
+  .btn-box {
+    flex-direction: column;
+  }
+
+  .btn-box .btn {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .home-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-content h3 {
+    font-size: 1rem;
+  }
+
+  .home-content p {
+    font-size: 0.625rem;
+  }
+}
+.home-sci {
+  position: absolute;
+  bottom: 40px;
+  width: 172px;
+  /* background: red; */
+  display: flex;
+  justify-content: space-between;
+}
+.home-sci ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  /* animation: showRight 1s ease forwards; */
+  animation-delay: 2.5s;
+  background: #081b29;
+  z-index: 2;
+}
+.home-sci a {
+  position: relative;
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  width: 52px;
+  height: 32px;
+  background: transparent;
+  border: 2px solid #00abf0;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 30px;
+  color: #00abf0;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.home-sci a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00abf0;
+  z-index: -1;
+  transition: 0.5s;
+}
+.home-sci a:hover {
+  color: #081b29;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+.home-imgHover {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 500px;
+  height: 100%;
+  background: transparent;
+  transition: 3s;
+}
+.home-imgHover:hover {
+  background: #081b29;
+  opacity: 0.8;
+}
+.home-imgHover ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 3s;
+
+  z-index: 2;
+}
+
